@@ -1,0 +1,24 @@
+#! /bin/bash
+
+#SBATCH --partition=compute
+#SBATCH --job-name=qiime_denoising
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=jpitt@whoi.edu
+#SBATCH --ntasks=2
+#SBATCH --nodes=24
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=20000
+#SBATCH --time=2:00:00 
+#SBATCH --output=Plastic_denoising.log
+#export OMP_NUM_THREADS=1
+
+#This script processes the data that has been imported into qiime. 
+#We chose to truncate at 423 based on quality plots. 
+
+
+qiime dada2 denoise-pyro \
+--i-demultiplexed-seqs plastic_qiime_step_1.qza \
+--p-trunc-len 423 \
+--output-dir denoised_outputs
+
+
