@@ -1,0 +1,24 @@
+#! /bin/bash
+
+#SBATCH --partition=compute
+#SBATCH --job-name=plastic_silva_blast
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=jpitt@whoi.edu
+#SBATCH --ntasks=2
+#SBATCH --nodes=24
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=20000
+#SBATCH --time=2:00:00 
+#SBATCH --output=plastic_silva_blast.log
+#export OMP_NUM_THREADS=1
+
+#this script compares the trimmed samples to reference genomes provided by the silva database
+
+
+qiime feature-classifier classify-consensus-blast \
+--i-query ../output/denoised_outputs/representative_sequences.qza \
+--i-reference-reads /vortexfs1/omics/env-bio/collaboration/common-materials/databases/SILVA_132_QIIME_release/qiime_form/silva132_rep_set_all99.qza \
+--i-reference-taxonomy /vortexfs1/omics/env-bio/collaboration/common-materials/databases/SILVA_132_QIIME_release/qiime_form/taxonomy_all_levels99.qza \
+--output-dir ../output/silva_blasted_both	
+
+

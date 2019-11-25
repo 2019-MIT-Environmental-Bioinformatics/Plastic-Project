@@ -1,5 +1,5 @@
-# Plastic-Project
-Bioinformatics 2019 Final Project
+# Plastic-Project  
+Bioinformatics 2019 Final Project   
 Bethany Fowler and Jordan Pitt
 
 This is the repository for Bethany and Jordan's final project. For this project, we set out to replicate the analysis in [Zettler et al. 2013](https://pubs.acs.org/doi/full/10.1021/es401288x). The original paper 
@@ -11,7 +11,7 @@ The study includes 3 samples collected from each of these environments within th
 
 The raw 16s data collected by Zettler et al. is available in the NCBI Short Read Archive BioProject: PRJNA207080. It can be found [here](https://www.ncbi.nlm.nih.gov/sra). 
 
-To download this data for use, we use our downloading conda environment. 
+To download this data for use, we activate our downloading conda environment. 
 We then use the command 
 ```
 fastq-dump -O sra/ SRR907634
@@ -33,11 +33,11 @@ This generates the file plastic_qiime_step_1.qza which is available in output/im
 Next, we denoise and filter the data, calculate diversity metrics, and assign taxonomy. We do this using the followign scripts (available in our scripts directory) in the order below. 
 The outputs of each of these files are available in the output directory and are bulleted beneath the script name. The corresponding logs are available in the logs directory.  
 
-*denoising_wrapper.txt
-	*denoised_outputs/
-		*denoising_stats.qza
-		*representative_sequences.qza
-		*table.qza
+* denoising_wrapper.txt
+	* denoised_outputs/
+		* denoising_stats.qza
+		* representative_sequences.qza
+		* table.qza
 
 *visualize_denoised.txt
 	*qiime_vis/

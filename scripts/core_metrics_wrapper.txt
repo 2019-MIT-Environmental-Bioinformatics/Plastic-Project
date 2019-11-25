@@ -1,0 +1,23 @@
+#! /bin/bash
+
+#SBATCH --partition=compute
+#SBATCH --job-name=core_metrics
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=jpitt@whoi.edu
+#SBATCH --ntasks=2
+#SBATCH --nodes=24
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=20000
+#SBATCH --time=2:00:00 
+#SBATCH --output=core_metrics.log
+#export OMP_NUM_THREADS=1
+
+#this script calculates core diversity metrics based off a phylogenetic tree and table of representative sequences
+
+
+qiime diversity core-metrics-phylogenetic \
+--i-phylogeny ../output/phylo_tree/rooted-tree.qza \
+--i-table ../output/denoised_outputs/table.qza \
+--p-sampling-depth 1800 \
+--m-metadata-file ../data/plastic_manifest_1.tsv \
+--output-dir ../output/core-metric-results

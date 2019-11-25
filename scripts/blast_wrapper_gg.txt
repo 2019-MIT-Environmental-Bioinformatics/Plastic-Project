@@ -1,0 +1,23 @@
+#! /bin/bash
+
+#SBATCH --partition=compute
+#SBATCH --job-name=plastic_gg_blast
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=bfowler@whoi.edu
+#SBATCH --ntasks=2
+#SBATCH --nodes=24
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=20000
+#SBATCH --time=2:00:00 
+#SBATCH --output=plastic_gg_blast%.log
+#export OMP_NUM_THREADS=1
+
+#this script compares the trimmed samples to reference genomes provided by the greengenes database
+
+
+qiime feature-classifier classify-sklearn \
+--i-classifier ../data/gg_tools/gg-13-8-99-515-806-nb-classifier.qza \
+--i-reads ../output/denoised_outputs/representative_sequences.qza \
+--output-dir ../output/gg_blasted_both	
+
+
