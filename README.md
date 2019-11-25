@@ -28,9 +28,18 @@ qiime tools import --type 'SampleData[SequencesWithQuality]' --input-path plasti
 ```
 This generates the file plastic_qiime_step_1.qza which is available in output/imported_data.
 
+
 ## Qiime2 Analysis
 
-Next, we denoise and filter the data, calculate diversity metrics, and assign taxonomy. We do this using the followign scripts (available in our scripts directory) in the order below. 
+We visualize the sequences and their quality using the command: 
+```
+qiime demux summarize --i-data plastic_qiime_step_1.qza --o-visualization plastic_unfiltered_vis.qzv
+```
+
+The visualization that this command generates can be found in the output/qiime_vis directory of this repository. 
+We used this visualization to choose our trimming cutoffs for the following steps. 
+
+Next, we denoise and filter the data, calculate diversity metrics, and assign taxonomy. We do this using the following scripts (available in our scripts directory) in the order below. 
 The outputs of each of these files are available in the output directory and are bulleted beneath the script name. The corresponding logs are available in the logs directory.  
 
 * denoising_wrapper.txt
@@ -43,7 +52,7 @@ The outputs of each of these files are available in the output directory and are
 	* qiime_vis/
 		* metadata_tabulate.qzv
 		* table_summary.qzv
-		* plastic_unfiltered_vis.qzv 
+		* table_tabulate.qzv 
 
 * blast_wrapper_silva.txt
 	* silva_blasted_both/
@@ -86,5 +95,6 @@ The outputs of each of these files are available in the output directory and are
 		* weighted_unifrac-emperor.qzv
 		* jaccard_emperor.qzv
 		* bray_curtis_emperor.qzv
+		* shannon_group-sig.qzv
 
 	
