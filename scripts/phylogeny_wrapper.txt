@@ -1,0 +1,33 @@
+#! /bin/bash
+
+#SBATCH --partition=compute
+#SBATCH --job-name=phylogeny
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=jpitt@whoi.edu
+#SBATCH --ntasks=2
+#SBATCH --nodes=24
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=20000
+#SBATCH --time=2:00:00 
+#SBATCH --output=phylogeny.log
+#export OMP_NUM_THREADS=1
+
+#this script creates a phylogentic tree 
+
+qiime alignment mafft \
+--i-sequences ../output/denoised_outputs/representative_sequences.qza \
+--p-n-threads 0 \
+--o-alignment aligned-rep-seqs.qza
+
+qiime alignment mask \
+--i-alignment aligned-rep-seqs.qza \
+--o-masked-alignment masked-aligned-rep-seqs.qza
+
+qiime phylogeny fasttree \
+--i-alignment masked-aligned-rep-seqs.qza \
+--p-n-threads 0 \
+--o-tree unrooted-tree.qza
+
+qiime phylogeny midpoint-root \
+--i-tree unrooted-tree.qza \
+--o-rooted-tree rooted-tree.qza
