@@ -39,52 +39,52 @@ The outputs of each of these files are available in the output directory and are
 		* representative_sequences.qza
 		* table.qza
 
-*visualize_denoised.txt
-	*qiime_vis/
-		*metadata_tabulate.qzv
-		*table_summary.qzv
-		*plastic_unfiltered_vis.qzv 
+* visualize_denoised.txt
+	* qiime_vis/
+		* metadata_tabulate.qzv
+		* table_summary.qzv
+		* plastic_unfiltered_vis.qzv 
 
-*blast_wrapper_silva.txt
-	*silva_blasted_both/
-		*classification.qza
+* blast_wrapper_silva.txt
+	* silva_blasted_both/
+		* classification.qza
 
-*visualize_blasted.txt
-	*qiime_vis/
-		*blasted_metadata.qzv
+* visualize_blasted.txt
+	* qiime_vis/
+		* blasted_metadata.qzv
 		
-*phylogeny_wrapper.txt
-	*phylo_tree/
-		*aligned-rep-seqs.qza
-		*masked-aligned-rep-seqs.qza
-		*rooted-tree.qza
-		*unrooted-tree.qza
+* phylogeny_wrapper.txt
+	* phylo_tree/
+		* aligned-rep-seqs.qza
+		* masked-aligned-rep-seqs.qza
+		* rooted-tree.qza
+		* unrooted-tree.qza
 
-*alpha_rarefaction_wrapper.txt
-	*qiime-vis/
-		*alpha-rarefaction.qzv
+* alpha_rarefaction_wrapper.txt
+	* qiime-vis/
+		* alpha-rarefaction.qzv
 
-*diversity_metrics_wrapper.txt 
-	*core-metric-results/
-		*rarefied_table.qza
-		*shannon_vector.qza
-		*unweighted_unifrac_distance_matrix.qza
- 		*unweighted_unifrac_pcoa_results.qza
- 		*weighted_unifrac_distance_matrix.qza
- 		*weighted_unifrac_pcoa_results.qza
-		*bray_curtis_distance_matrix.qza
-		*bray_curtis_pcoa_results.qza
-		*evenness_vector.qza
-		*faith_pd_vector.qza
-		*jaccard_distance_matrix.qza
-		*jaccard_pcoa_results.qza
-		*observed_otus_vector.qza
-	*qiime_vis/
-		*unweighted-emperor.qzv
-		*unweighted-unifrac-distance-sign.qzv
-		*unweighted_unifrac-emperor.qzv
-		*weighted_unifrac-emperor.qzv
-		*jaccard_emperor.qzv
-		*bray_curtis_emperor.qzv
+* diversity_metrics_wrapper.txt 
+	* core-metric-results/
+		* rarefied_table.qza
+		* shannon_vector.qza
+		* unweighted_unifrac_distance_matrix.qza
+ 		* unweighted_unifrac_pcoa_results.qza
+ 		* weighted_unifrac_distance_matrix.qza
+ 		* weighted_unifrac_pcoa_results.qza
+		* bray_curtis_distance_matrix.qza
+		* bray_curtis_pcoa_results.qza
+		* evenness_vector.qza
+		* faith_pd_vector.qza
+		* jaccard_distance_matrix.qza
+		* jaccard_pcoa_results.qza
+		* observed_otus_vector.qza
+	* qiime_vis/
+		* unweighted-emperor.qzv
+		* unweighted-unifrac-distance-sign.qzv
+		* unweighted_unifrac-emperor.qzv
+		* weighted_unifrac-emperor.qzv
+		* jaccard_emperor.qzv
+		* bray_curtis_emperor.qzv
 
 	
