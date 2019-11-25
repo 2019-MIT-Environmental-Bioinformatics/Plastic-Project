@@ -42,38 +42,38 @@ We used this visualization to choose our trimming cutoffs for the following step
 Next, we denoise and filter the data, calculate diversity metrics, and assign taxonomy. We do this using the following scripts (available in our scripts directory) in the order below. 
 The outputs of each of these files are available in the output directory and are bulleted beneath the script name. The corresponding logs are available in the logs directory.  
 
-* 1. denoising_wrapper.txt
+1. denoising_wrapper.txt
 	* denoised_outputs/
 		* denoising_stats.qza
 		* representative_sequences.qza
 		* table.qza
 
-* 2. visualize_denoised.txt
+2. visualize_denoised.txt
 	* qiime_vis/
 		* metadata_tabulate.qzv
 		* table_summary.qzv
 		* table_tabulate.qzv 
 
-* 3. blast_wrapper_silva.txt
+3. blast_wrapper_silva.txt
 	* silva_blasted_both/
 		* classification.qza
 
-* 4. visualize_blasted.txt
+4. visualize_blasted.txt
 	* qiime_vis/
 		* blasted_metadata.qzv
 		
-* 5. phylogeny_wrapper.txt
+5. phylogeny_wrapper.txt
 	* phylo_tree/
 		* aligned-rep-seqs.qza
 		* masked-aligned-rep-seqs.qza
 		* rooted-tree.qza
 		* unrooted-tree.qza
 
-* 6. alpha_rarefaction_wrapper.txt
+6. alpha_rarefaction_wrapper.txt
 	* qiime-vis/
 		* alpha-rarefaction.qzv
 
-* 7. diversity_metrics_wrapper.txt 
+7. diversity_metrics_wrapper.txt 
 	* core-metric-results/
 		* rarefied_table.qza
 		* shannon_vector.qza
