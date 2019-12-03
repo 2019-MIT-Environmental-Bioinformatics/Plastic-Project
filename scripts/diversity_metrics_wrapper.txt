@@ -12,7 +12,8 @@
 #SBATCH --output=core_vis_diversity.log
 #export OMP_NUM_THREADS=1
 
-#this script creates a phylogentic tree 
+#this script calculates a variety of diversity metrics. Outputs are visualizations looking at significance and displaying the similarity of the alpha
+#and beta diversity metrics. 
 
 qiime diversity alpha-group-significance \
 --i-alpha-diversity ../output/core-metric-results/shannon_vector.qza \

@@ -12,7 +12,8 @@
 #SBATCH --output=alpha_rarefaction.log
 #export OMP_NUM_THREADS=1
 
-
+#script used to visualize alpha-rarefaction curves to determine reads needed for richness measurements
+#--p-max-depth chosen roughly, --m-metdata-file manifest, --i-phylogeny phylogenetic tree generated from phylogeny wrapper
 qiime diversity alpha-rarefaction \
 --i-table ../output/denoised_outputs/table.qza \
 --i-phylogeny ../output/phylo_tree/rooted-tree.qza \

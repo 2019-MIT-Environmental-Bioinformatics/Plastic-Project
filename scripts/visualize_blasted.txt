@@ -12,6 +12,8 @@
 #SBATCH --output=vis-blast%j.log
 #export OMP_NUM_THREADS=1
 
+#generates a taxa bar plot based off the classifiations provided from blast. And generates metadata based off
+#the classifications.
 
 qiime taxa barplot \
 --i-table ../output/denoised_outputs/table.qza \

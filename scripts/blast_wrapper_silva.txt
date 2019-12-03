@@ -13,7 +13,7 @@
 #export OMP_NUM_THREADS=1
 
 #this script compares the trimmed samples to reference genomes provided by the silva database
-
+#silva data base was located on our HPC prior to use and we provide the absolute path to the reference materials
 
 qiime feature-classifier classify-consensus-blast \
 --i-query ../output/denoised_outputs/representative_sequences.qza \

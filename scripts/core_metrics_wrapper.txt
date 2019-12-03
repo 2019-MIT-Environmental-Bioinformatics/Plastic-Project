@@ -13,7 +13,7 @@
 #export OMP_NUM_THREADS=1
 
 #this script calculates core diversity metrics based off a phylogenetic tree and table of representative sequences
-
+#sampling depth chosen based off the alpha-rarefaction curves
 
 qiime diversity core-metrics-phylogenetic \
 --i-phylogeny ../output/phylo_tree/rooted-tree.qza \
