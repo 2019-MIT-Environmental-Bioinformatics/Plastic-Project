@@ -3,7 +3,7 @@ Bioinformatics 2019 Final Project
 Bethany Fowler and Jordan Pitt
 
 This is the repository for Bethany and Jordan's final project. For this project, we set out to replicate the analysis in [Zettler et al. 2013](https://pubs.acs.org/doi/full/10.1021/es401288x). The original paper 
-characterizes the microbial communities present on plastic marine debris using Amplicon Pyrotag Sequencing. In particular it examines the differences between the microbial communties present on particles of polypropylene, polyethylene and in non-particle seawater. 
+characterizes the microbial communities present on plastic marine debris using Amplicon Pyrotag Sequencing. In particular it examines the differences between the microbial communities present on particles of polypropylene, polyethylene and in non-particle seawater. 
 The study includes 3 samples collected from each of these environments within the North Atlantic Subtropical Gyre. 
 
 
@@ -43,26 +43,31 @@ Next, we denoise and filter the data, calculate diversity metrics, and assign ta
 The outputs of each of these files are available in the output directory and are bulleted beneath the script name. The corresponding logs are available in the logs directory.  
 
 1. denoising_wrapper.txt
+	* Used to trim read and filter out low quality reads
 	* denoised_outputs/
 		* denoising_stats.qza
 		* representative_sequences.qza
 		* table.qza
 
 2. visualize_denoised.txt
+	* Allowed us to visualize what the data looked like after trimming to ensure good quality
 	* qiime_vis/
 		* metadata_tabulate.qzv
 		* table_summary.qzv
 		* table_tabulate.qzv 
 
 3. blast_wrapper_silva.txt
+	* Used to assign taxonomy to the representative_sequences.qza using the silva data base (used the version already on the cluster)
 	* silva_blasted_both/
 		* classification.qza
 
 4. visualize_blasted.txt
+	* Allowed us to generate a bar plot with the different taxa across the samples. Can look through multiple taxonomic levels
 	* qiime_vis/
 		* blasted_metadata.qzv
 		
 5. phylogeny_wrapper.txt
+	* Generated a phylogenetic tree based off of the representative_sequences.qza. This is used in the diversity metrics.
 	* phylo_tree/
 		* aligned-rep-seqs.qza
 		* masked-aligned-rep-seqs.qza
@@ -70,10 +75,12 @@ The outputs of each of these files are available in the output directory and are
 		* unrooted-tree.qza
 
 6. alpha_rarefaction_wrapper.txt
+	* Allowed for visualization of alpha rarefaction curves to check how many reads were needed to determine richness 
 	* qiime-vis/
 		* alpha-rarefaction.qzv
 
-7. diversity_metrics_wrapper.txt 
+7. core_metrics_wrapper.txt and diversity_metrics_wrapper.txt 
+	* Generates files looking at the alpha and beta diversity as well as their significance. QZV files include some PCoA files for visualization of diversity
 	* core-metric-results/
 		* rarefied_table.qza
 		* shannon_vector.qza
