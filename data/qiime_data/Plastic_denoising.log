@@ -1,3 +1,0 @@
-Saved FeatureTable[Frequency] to: denoised_outputs/table.qza
-Saved FeatureData[Sequence] to: denoised_outputs/representative_sequences.qza
-Saved SampleData[DADA2Stats] to: denoised_outputs/denoising_stats.qza
