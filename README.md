@@ -11,7 +11,7 @@ The study includes 3 samples collected from each of these environments within th
 
 The raw 16s data collected by Zettler et al. is available in the NCBI Short Read Archive BioProject: PRJNA207080. It can be found [here](https://www.ncbi.nlm.nih.gov/sra). 
 
-To download this data for use, we activate our downloading conda environment. 
+To download this data for use, we activate our downloading conda environment (plastic_file_downloading_conda.yml in the envs directory). 
 We then use the command 
 ```
 fastq-dump -O sra/ SRR907634
@@ -21,7 +21,7 @@ The data are not paired-end reads, so we only have one file per sample.
 
 ## Importing Data into Qiime
 
-For the rest of the analysis we use our qiime2-2019.7 environment, in order to use the Qiime2 tools. 
+For the rest of the analysis we use our qiime2-2019.7 environment (see qiim2_conda.yml in the envs directory), in order to use the Qiime2 tools. 
 The first step is to transform our .fastq files into one .qza file. In order to do this, we made our manifest, plastic_manifest_1.tsv, which is currently in our data directory. We then used the command: 
 ```
 qiime tools import --type 'SampleData[SequencesWithQuality]' --input-path plastic_manifest_1.tsv --output-path plastic_qiime_step_1.qza --input-format SingleEndFastqManifestPhred33V2
