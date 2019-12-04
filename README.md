@@ -21,7 +21,7 @@ The data are not paired-end reads, so we only have one file per sample.
 
 ## Importing Data into Qiime
 
-For the rest of the analysis we use our qiime2-2019.7 environment (see qiim2_conda.yml in the envs directory), in order to use the Qiime2 tools. 
+For the rest of the analysis we use our qiime2-2019.7 environment (see qiime2_conda.yml in the envs directory), in order to use the Qiime2 tools. 
 The first step is to transform our .fastq files into one .qza file. In order to do this, we made our manifest, plastic_manifest_1.tsv, which is currently in our data directory. We then used the command: 
 ```
 qiime tools import --type 'SampleData[SequencesWithQuality]' --input-path plastic_manifest_1.tsv --output-path plastic_qiime_step_1.qza --input-format SingleEndFastqManifestPhred33V2
@@ -36,7 +36,7 @@ We visualize the sequences and their quality using the command:
 qiime demux summarize --i-data plastic_qiime_step_1.qza --o-visualization plastic_unfiltered_vis.qzv
 ```
 
-The visualization that this command generates can be found in the output/qiime_vis directory of this repository. 
+The visualization that this command generates (plastic_unfiletered_vis.qzv) can be found in the output/qiime_vis directory of this repository. 
 We used this visualization to choose our trimming cutoffs for the following steps. 
 
 Next, we denoise and filter the data, calculate diversity metrics, and assign taxonomy. We do this using the following scripts (available in our scripts directory) in the order below. 
@@ -105,3 +105,8 @@ The outputs of each of these files are available in the output directory and are
 		* shannon_group-sig.qzv
 
 	
+## Dicussion of Results
+See our jupyter-notebooks/Plastic_Project_Final_Comparison.ipynb for a write up of our anaysis and the discussion of our results. 
+
+Contact Bethany Fowler (bfowler@whoi.edu) if you have any further questions about how to reproduce our work for this project! 
+
